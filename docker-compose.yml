@@ -1,0 +1,20 @@
+version: '3.2'
+services:
+  
+  graph-app:
+   image: graph-app
+   build: backend/
+   restart: always
+   network_mode: host
+   ports:
+     - 8080:8080
+   expose:
+     - 8080
+  angular:
+    image: angular-app
+    build: frontend
+    network_mode: host
+    container_name: angular-docker
+    ports:
+      - 4200:4200
+
